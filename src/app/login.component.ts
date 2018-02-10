@@ -20,7 +20,7 @@ export class LoginComponent {
     redirectUri: 'http://localhost:4200/implicit/callback',
     oAuthTimeout: 30000,
     idps: [
-        {type: 'GOOGLE', id: '613996543366-gjmue4m646sjb8jd81kea2g9r65h8uf8.apps.googleusercontent.com'}
+        {type: 'GOOGLE', id: '0oadq79q2woFJXj7p0h7'}
       ]
   });
 
@@ -47,7 +47,8 @@ export class LoginComponent {
     this.widget.renderEl(
       { el: '#okta-signin-container'}, res => {
         if (res.status === 'SUCCESS') {
-          this.signIn.loginRedirect({ sessionToken: res.session.token });
+          console.log(res);
+          this.signIn.loginRedirect({ sessionToken: res.idToken });
           // Hide the widget
           this.widget.hide();
         }
