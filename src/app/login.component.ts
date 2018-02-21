@@ -50,6 +50,7 @@ export class LoginComponent {
           console.log(res);
           this.signIn.loginRedirect({ sessionToken: res.idToken });
           // Hide the widget
+          console.log(res.idToken);
           this.widget.hide();
         }
         else {
